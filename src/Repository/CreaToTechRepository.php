@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\CreaToTech;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use App\Entity\Techno;
+use App\Entity\Creation;
 
 /**
  * @method CreaToTech|null find($id, $lockMode = null, $lockVersion = null)

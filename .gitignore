@@ -3,6 +3,7 @@
 /.env
 /public/bundles/
 /public/phpMyAdmin/
+/node_modules/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###

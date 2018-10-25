@@ -6,10 +6,12 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/api-pack": "^1.1",
+        "notfloran/mjml-bundle": "^2.1",
         "symfony/console": "*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "*",
         "symfony/orm-pack": "^1.0",
+        "symfony/swiftmailer-bundle": "^3.2",
         "symfony/yaml": "*"
     },
     "require-dev": {
