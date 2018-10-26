@@ -28,24 +28,24 @@ class EmailService {
         $this->mjml =$mjml ;
     }
 
-  public function mailBooking(array $bookingValue, string $email, $totalPay){
+  public function email(string $name,string $emailFrom,string $subject,string $message,string $emailTo){
 
-    $message = (new \Swift_Message('Vos billets pour le louvre'))
-        ->setFrom('louvretikets@mail.le-dev-web.com')
-        ->setTo($email)
+    $message = (new \Swift_Message($subject))
+        ->setFrom($emailFrom)
+        ->setTo($emailTo)
         ->setBody(
           $this->mjml->render(
-            $this->twig->render('emails/devisEtBillet.mjml.twig',[
-                  'bookingValue' => $bookingValue,
-                  'totalPay' => $totalPay
+            $this->twig->render('emails/emailForMe.mjml.twig',[
+                  'name' => $name,
+                  'bodyMail' => $message
                 ])
         ),
         'text/html'
         )
         ->addPart(
-            $this->twig->render('emails/devisEtBillet.text.twig',[
-                  'bookingValue' => $bookingValue,
-                  'totalPay' => $totalPay
+            $this->twig->render('emails/emailForMe.text.twig',[
+                  'name' => $name,
+                  'bodyMail' => $message
                 ]),
             'text/plain'
         );
