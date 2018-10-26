@@ -4,8 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Techno;
-use App\Entity\Creation;
+
 
 /**
  * @ApiResource()
@@ -21,13 +20,13 @@ class CreaToTech
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\techno")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Techno")
      * @ORM\JoinColumn(nullable=false)
      */
     private $idTechno;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\creation")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Creation")
      * @ORM\JoinColumn(nullable=false)
      */
     private $idCrea;
