@@ -34,20 +34,11 @@ class EmailService {
         ->setFrom($emailFrom)
         ->setTo($emailTo)
         ->setBody(
-          $this->mjml->render(
-            $this->twig->render('emails/emailForMe.mjml.twig',[
-                  'name' => $name,
-                  'bodyMail' => $message
-                ])
-        ),
-        'text/html'
-        )
-        ->addPart(
-            $this->twig->render('emails/emailForMe.text.twig',[
-                  'name' => $name,
-                  'bodyMail' => $message
-                ]),
-            'text/plain'
+          $this->twig->render('emails/emailForMe.text.twig',[
+            'name' => $name,
+            'bodyMail' => $message
+          ]),
+        'text/plain'
         );
 
     $this->mailer->send($message);

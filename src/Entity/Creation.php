@@ -3,7 +3,10 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Techno;
 
 /**
  * @ApiResource(
@@ -60,6 +63,16 @@ class Creation
      * @ORM\Column(type="text")
      */
     private $text;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Techno", inversedBy="creations")
+     */
+    private $technos;
+
+    public function __construct()
+    {
+        $this->technos = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -158,6 +171,32 @@ class Creation
     public function setText(string $text): self
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Techno[]
+     */
+    public function getTechnos(): Collection
+    {
+        return $this->technos;
+    }
+
+    public function addTechno(Techno $techno): self
+    {
+        if (!$this->technos->contains($techno)) {
+            $this->technos[] = $techno;
+        }
+
+        return $this;
+    }
+
+    public function removeTechno(Techno $techno): self
+    {
+        if ($this->technos->contains($techno)) {
+            $this->technos->removeElement($techno);
+        }
 
         return $this;
     }
