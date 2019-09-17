@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ced735cc87c81f2c2a8c5822fb2b817",
+    "content-hash": "dbbff667fc40fda6268efec02c5e607a",
     "packages": [
         {
             "name": "api-platform/api-pack",
@@ -1610,27 +1610,29 @@
         },
         {
             "name": "notfloran/mjml-bundle",
-            "version": "v2.1.2",
+            "version": "v3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/notFloran/mjml-bundle.git",
-                "reference": "3786a141d94e48e1fd758ed8b0b92f401b282e9f"
+                "reference": "4cdd69c046f518db55f2a4e9284dc0e6b46f18c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/notFloran/mjml-bundle/zipball/3786a141d94e48e1fd758ed8b0b92f401b282e9f",
-                "reference": "3786a141d94e48e1fd758ed8b0b92f401b282e9f",
+                "url": "https://api.github.com/repos/notFloran/mjml-bundle/zipball/4cdd69c046f518db55f2a4e9284dc0e6b46f18c7",
+                "reference": "4cdd69c046f518db55f2a4e9284dc0e6b46f18c7",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1.0",
-                "symfony/dependency-injection": "^4.0",
-                "symfony/process": "^4.0",
-                "symfony/twig-bundle": "^4.0"
+                "symfony/dependency-injection": "^3.4 || ^4.0",
+                "symfony/process": "^3.4 || ^4.0",
+                "symfony/twig-bundle": "^3.4 || ^4.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.10",
-                "phpstan/phpstan": "^0.9.2"
+                "matthiasnoback/symfony-config-test": "^4.0",
+                "phpstan/phpstan": "^0.9.2",
+                "phpunit/phpunit": "^7.4"
             },
             "suggest": {
                 "swiftmailer/swiftmailer": "Plugin to integrate MJML in SwiftMailer"
@@ -1656,7 +1658,7 @@
                 "email",
                 "mjml"
             ],
-            "time": "2018-08-30T07:43:25+00:00"
+            "time": "2019-09-16T18:49:04+00:00"
         },
         {
             "name": "ocramius/package-versions",
